@@ -1,0 +1,15 @@
+QMK Config
+
+Columns:
+B6 (pin 10) goes to number row
+other pins in order
+F6 (pin A1) goes to home/end row
+
+Rows:
+Goes Q -> P
+"B5", "B4", "E6", "D7", "F4", "F5", "D3", "D2", "C6", "D4", "D0", "D1"
+
+"B5", "B4", "E6", "D7" - first 4
+"F4", "F5" - 1st middle 2
+"D3", "D2" - 2nd middle 2
+"C6", "D4", "D0", "D1" - rest 4
