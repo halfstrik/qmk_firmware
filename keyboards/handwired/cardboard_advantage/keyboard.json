@@ -1,8 +1,8 @@
 {
     "manufacturer": "Sergey Petrunin",
     "keyboard_name": "handwired/cardboard_advantage",
-    "maintainer": "'",
-    "development_board": "promicro",
+    "maintainer": "sergey-petrunin",
+    "development_board": "kb2040",
     "diode_direction": "ROW2COL",
     "features": {
         "bootmagic": true,
@@ -11,8 +11,8 @@
         "nkro": true
     },
     "matrix_pins": {
-        "rows": ["D3", "D2", "D1", "D4", "D7", "B4"],
-        "cols": ["F5", "F7", "B3", "B6", "C6", "B5", "E6", "D0", "B2", "B1", "F6", "F4"]
+        "rows": ["GP19", "GP21", "GP22", "GP27", "GP28", "GP18"],
+        "cols": ["GP2", "GP5", "GP7", "GP9", "GP11", "GP13", "GP12", "GP14", "GP8", "GP6", "GP4", "GP1"]
     },
     "url": "",
     "usb": {
