@@ -1,0 +1,3 @@
+RGB_MATRIX_DRIVER = ws2812
+RGBLIGHT_ENABLE = yes
+WS2812_DRIVER = vendor   # important for RP2040 (Pico)
