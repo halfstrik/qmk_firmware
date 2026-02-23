@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include QMK_KEYBOARD_H
+#include "quantum.h"
 
 enum layers {
     _BASE,
@@ -26,3 +27,50 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  _______,_______,   _______, _______, _______, _______, _______, _______, _______,  _______, _______
     )
 };
+
+led_config_t g_led_config = {
+    /* Matrix to LED index (6 rows × 12 cols) */
+    {
+        // Row 0 — number row
+        { NO_LED, NO_LED, NO_LED, NO_LED, 4,      3,      NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED },
+        // Row 1 — Q row
+        { NO_LED, NO_LED, NO_LED, NO_LED, 5,      2,      NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED },
+        // Row 2 — A row
+        { NO_LED, NO_LED, NO_LED, NO_LED, 6,      1,      NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED },
+        // Row 3 — Z row
+        { NO_LED, NO_LED, NO_LED, NO_LED, 7,      0,      NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED },
+        // Row 4 — arrows, misc
+        { NO_LED, NO_LED, NO_LED, NO_LED, 8,      NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED },
+        // Row 5 — thumbs
+        { NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED }
+    },
+    /* LED physical positions (rough ergonomic layout) */
+    {
+        { 60, 48 },  // LED 0 — B
+        { 60, 32 },  // LED 1 — G
+        { 60, 16 },  // LED 2 — T
+        { 60,  0 },  // LED 3 — 5
+        { 40,  0 },
+        { 40, 16 },
+        { 40, 32 },
+        { 40, 48 },
+        { 40, 60 }
+    },
+    /* LED flags */
+    {
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT
+    }
+};
+
+void keyboard_post_init_user(void) {
+    rgblight_enable_noeeprom();        // turn LEDs on
+    rgblight_sethsv_noeeprom(170, 255, 120);  // solid blue
+}
