@@ -32,32 +32,154 @@ led_config_t g_led_config = {
     /* Matrix to LED index (6 rows × 12 cols) */
     {
         // Row 0 — number row
-        { NO_LED, NO_LED, NO_LED, NO_LED, 4,      3,      NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED },
+        { 24    , 23    , 14    , 13    , 4,      3,      41    , 42     , 51    , 52    , 61     , 62    },
         // Row 1 — Q row
-        { NO_LED, NO_LED, NO_LED, NO_LED, 5,      2,      NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED },
+        { 25    , 22    , 15    , 12    , 5,      2,      40    , 43     , 50    , 53    , 60     , 63    },
         // Row 2 — A row
-        { NO_LED, NO_LED, NO_LED, NO_LED, 6,      1,      NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED },
+        { 26    , 21    , 16    , 11    , 6,      1,      39    , 44     , 49    , 54    , 59     , 64    },
         // Row 3 — Z row
-        { NO_LED, NO_LED, NO_LED, NO_LED, 7,      0,      NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED },
+        { 27    , 20    , 17    , 10,     7,      0,      38    , 45     , 48    , 55    , 58    , 65     },
         // Row 4 — arrows, misc
-        { NO_LED, NO_LED, NO_LED, NO_LED, 8,      NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED },
+        { NO_LED, 19    , 18    , 9,      8,      NO_LED, NO_LED, 46     , 47    , 56    , 57    , NO_LED },
         // Row 5 — thumbs
-        { NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED }
+        { NO_LED, 28,     29,    30,     31,      32,     33,     34,      35,     36,     37,     NO_LED }
     },
     /* LED physical positions (rough ergonomic layout) */
     {
-        { 60, 48 },  // LED 0 — B
-        { 60, 32 },  // LED 1 — G
-        { 60, 16 },  // LED 2 — T
-        { 60,  0 },  // LED 3 — 5
-        { 40,  0 },
-        { 40, 16 },
-        { 40, 32 },
-        { 40, 48 },
-        { 40, 60 }
+        { 100, 30 },  // LED 0 — B
+        { 100, 40 },  // LED 1 — G
+        { 100, 50 },  // LED 2 — T
+        { 100, 60 },  // LED 3 — 5
+        { 80,  60 },
+        { 80,  50 },
+        { 80,  40 },
+        { 80,  30 },  // LED 7
+        { 80,  20 },
+        { 60,  20 },  // LED 9 -
+        { 60,  30 },
+        { 60,  40 },
+        { 60,  50 },
+        { 60,  60 },  // LED 13 - 3
+        { 40,  60 },
+        { 40,  50 },
+        { 40,  40 },  // LED 16
+        { 40,  30 },
+        { 40,  20 },
+        { 20,  20 },  // LED 19
+        { 20,  30 },
+        { 20,  40 },  // LED 21
+        { 20,  50 },
+        { 20,  60 },  // LED 23
+        { 0,  60 },
+        { 0,  50 },
+        { 0,  40 },
+        { 0,  30 }, // LED 27
+        { 90, 20 },
+        { 100, 18 },
+        { 105, 15 },
+        { 107, 20 },
+        { 109, 25 }, // LED 32 - middle
+        // ---- mirrored right half ----
+        { 124, 25 }, // mirror of LED 32 (109,25)
+        { 117, 20 }, // mirror of LED 31 (107,20)
+        { 119, 15 }, // mirror of LED 30 (105,15)
+        { 124, 18 }, // mirror of LED 29 (100,18)
+        { 134, 20 }, // mirror of LED 28 (90,20)
+
+        { 224, 30 }, // mirror of LED 27 (0,30)
+        { 224, 40 },
+        { 224, 50 },
+        { 224, 60 },
+
+        { 204, 60 }, // mirror of LED 23 (20,60)
+        { 204, 50 },
+        { 204, 40 },
+        { 204, 30 },
+        { 204, 20 },
+
+        { 184, 20 }, // mirror of LED 18 (40,20)
+        { 184, 30 },
+        { 184, 40 },
+        { 184, 50 },
+        { 184, 60 },
+
+        { 164, 60 }, // mirror of LED 13 (60,60)
+        { 164, 50 },
+        { 164, 40 },
+        { 164, 30 },
+        { 164, 20 },
+
+        { 144, 20 }, // mirror of LED 8 (80,20)
+        { 144, 30 },
+        { 144, 40 },
+        { 144, 50 },
+        { 144, 60 },
+
+        { 124, 60 }, // mirror of LED 3 (100,60)
+        { 124, 50 },
+        { 124, 40 },
+        { 124, 30 }  // mirror of LED 0 (100,30)
+
     },
     /* LED flags */
     {
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
+        LED_FLAG_KEYLIGHT,
         LED_FLAG_KEYLIGHT,
         LED_FLAG_KEYLIGHT,
         LED_FLAG_KEYLIGHT,
@@ -71,6 +193,6 @@ led_config_t g_led_config = {
 };
 
 void keyboard_post_init_user(void) {
-    rgblight_enable_noeeprom();        // turn LEDs on
-    rgblight_sethsv_noeeprom(170, 255, 120);  // solid blue
+    rgb_matrix_enable_noeeprom();        // turn LEDs on
+//    rgblight_sethsv_noeeprom(170, 255, 120);  // solid blue
 }
