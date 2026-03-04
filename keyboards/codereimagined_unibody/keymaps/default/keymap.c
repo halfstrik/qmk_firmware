@@ -193,8 +193,13 @@ led_config_t g_led_config = {
     }
 };
 
-void keyboard_post_init_user(void) {
-    //rgb_matrix_enable_noeeprom();        // turn LEDs on
-    //eeconfig_init()
-//    rgblight_sethsv_noeeprom(170, 255, 120);  // solid blue
+//void keyboard_post_init_user(void) {
+//}
+
+void suspend_power_down_user(void) {
+    rgb_matrix_set_suspend_state(true);
+}
+
+void suspend_wakeup_init_user(void) {
+    rgb_matrix_set_suspend_state(false);
 }
