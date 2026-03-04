@@ -193,8 +193,27 @@ led_config_t g_led_config = {
     }
 };
 
-//void keyboard_post_init_user(void) {
-//}
+bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+    // Caps lock in all red - from example
+    if (host_keyboard_led_state().caps_lock) {
+        for (uint8_t i = led_min; i < led_max; i++) {
+            if (g_led_config.flags[i] & LED_FLAG_KEYLIGHT) {
+                rgb_matrix_set_color(i, RGB_RED);
+            }
+        }
+    }
+    // Layer indication in Yellow
+    for (uint8_t i = led_min; i < led_max; i++) {
+         switch(get_highest_layer(layer_state|default_layer_state)) {
+             case 1:
+                 rgb_matrix_set_color(i, RGB_YELLOW);
+                 break;
+             default:
+                 break;
+         }
+     }
+    return false;
+}
 
 void suspend_power_down_user(void) {
     rgb_matrix_set_suspend_state(true);
